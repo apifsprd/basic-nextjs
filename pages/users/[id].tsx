@@ -30,7 +30,7 @@ export async function getStaticPaths() {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const dataUsers = await res.json();
 
-    const paths = dataUsers.map((user) => ({
+    const paths = dataUsers.map((user: any) => ({
         params: {
             id: `${user.id}`,
         },
